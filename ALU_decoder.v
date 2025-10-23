@@ -3,7 +3,7 @@
 module ALU_decoder (
     input [1:0] ALUOp,
     input [2:0] funct3,
-    input funct7, op,
+    input funct7_5, op,
     output reg [2:0] ALUControl
 );
 
@@ -21,7 +21,7 @@ always @(*) begin
         2'b10: begin
             case (funct3)
                 3'b000: begin
-                    if ({op,funct7} == 2'b11) begin
+                    if ({op,funct7_5} == 2'b11) begin
                         ALUControl = SUB; // instruction sub
                     end else begin
                         ALUControl = ADD; // instruction add

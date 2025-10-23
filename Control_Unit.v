@@ -1,7 +1,7 @@
 module Control_Unit (
     input [6:0] Op,
     input [2:0] funct3,
-    input funct7,
+    input [6:0] funct7,
     output [1:0] ResultSrc,
     output MemWrite,
     output ALUSrc,
@@ -29,7 +29,7 @@ Main_decoder MainDecoder (
 ALU_decoder ALUDecoder (
 .ALUOp(ALUOp),
 .funct3(funct3),
-.funct7(funct7),
+.funct7_5(funct7[5]),
 .op(Op[5]),
 .ALUControl(ALUControl)
 );

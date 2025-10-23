@@ -18,7 +18,8 @@ module Decoder_stage (
     output wire [31:0] RD1_ID,
     output wire [31:0] RD2_ID,
     output wire [31:0] ImmExt_ID,
-    output wire [2:0] funct3_ID
+    output wire [2:0] funct3_ID,
+    output wire [6:0] funct7_ID
 );
 
 wire [24:0] InstrExtend;
@@ -27,7 +28,7 @@ wire [2:0] funct3;
 wire [4:0] A1;
 wire [4:0] A2;
 wire [4:0] A3;
-wire funct7;
+wire [6:0] funct7;
 
 //ASSIGN wire DOS WIRES NECESSÁRIOS
 assign InstrExtend  = Instr_ID[31:7];  //!Extração dos bits de Instr referentes à entrada do EXTEND
@@ -37,9 +38,10 @@ assign funct3       = Instr_ID[14:12]; //!Extração dos bits de Instr referente
 assign A1           = Instr_ID[19:15]; //!Extração dos bits de Instr referentes ao A1 do REGISTER_FILE
 assign A2           = Instr_ID[24:20]; //!Extração dos bits de Instr referentes ao A2 do REGISTER_FILE
 assign A3           = Instr_ID[11:7];  //!Extração dos bits de Instr referentes ao A3 do REGISTER_FILE
-assign funct7       = Instr_ID[30];    //!Extração dos bits de Instr referentes ao funct7 da CONTROL_UNIT
+assign funct7       = Instr_ID[31:25];    //!Extração dos bits de Instr referentes ao funct7 da CONTROL_UNIT
 
 assign funct3_ID = funct3;
+assign funct7_ID = funct7;
 
 //REGISTER_FILE
 register_file REGISTER_FILE (
