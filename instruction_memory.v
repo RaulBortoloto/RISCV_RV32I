@@ -5,7 +5,7 @@ module instruction_memory (
     reg [31:0] memory [0:1023]; //!Memória de instruções de 32 bits e 1024 palavras
 
     initial begin
-        $readmemh("/home/aluno/Downloads/aulas1423_jump/PROGRAM_atividade5.mem", memory);
+        $readmemh("/home/aluno/Downloads/RISCV_RV32I-main/PROGRAM_atividade5.mem", memory);
     end
 
     always @(*) begin

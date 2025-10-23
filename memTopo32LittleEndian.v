@@ -102,7 +102,7 @@ module memByteAddressable32WF #(
 );  
 
     // Conecta 4 bancos de byte (LSB = byte 0)
-    memory_write_first #(.DATA_WIDTH(8), .ADDRESS_WIDTH(6), .INIT_FILE("/home/aluno/Downloads/aulas1423_jump/data_byte0.mem")) mem_byte0 (
+    memory_write_first #(.DATA_WIDTH(8), .ADDRESS_WIDTH(6), .INIT_FILE("/home/aluno/Downloads/RISCV_RV32I-main/data_byte0.mem")) mem_byte0 (
         .clk(clk),
         .we(byteEnable[0]),
         .addr(addr),
@@ -110,7 +110,7 @@ module memByteAddressable32WF #(
         .dout(dout[7:0])
     );
 
-    memory_write_first #(.DATA_WIDTH(8), .ADDRESS_WIDTH(6), .INIT_FILE("/home/aluno/Downloads/aulas1423_jump/data_byte1.mem")) mem_byte1 (
+    memory_write_first #(.DATA_WIDTH(8), .ADDRESS_WIDTH(6), .INIT_FILE("/home/aluno/Downloads/RISCV_RV32I-main/data_byte1.mem")) mem_byte1 (
         .clk(clk),
         .we(byteEnable[1]),
         .addr(addr),
@@ -118,7 +118,7 @@ module memByteAddressable32WF #(
         .dout(dout[15:8])
     );
 
-    memory_write_first #(.DATA_WIDTH(8), .ADDRESS_WIDTH(6), .INIT_FILE("/home/aluno/Downloads/aulas1423_jump/data_byte2.mem")) mem_byte2 (
+    memory_write_first #(.DATA_WIDTH(8), .ADDRESS_WIDTH(6), .INIT_FILE("/home/aluno/Downloads/RISCV_RV32I-main/data_byte2.mem")) mem_byte2 (
         .clk(clk),
         .we(byteEnable[2]),
         .addr(addr),
@@ -126,7 +126,7 @@ module memByteAddressable32WF #(
         .dout(dout[23:16])
     );
 
-    memory_write_first #(.DATA_WIDTH(8), .ADDRESS_WIDTH(6), .INIT_FILE("/home/aluno/Downloads/aulas1423_jump/data_byte3.mem")) mem_byte3 (
+    memory_write_first #(.DATA_WIDTH(8), .ADDRESS_WIDTH(6), .INIT_FILE("/home/aluno/Downloads/RISCV_RV32I-main/data_byte3.mem")) mem_byte3 (
         .clk(clk),
         .we(byteEnable[3]),
         .addr(addr),
